@@ -34,7 +34,7 @@ public class TransformTest4_MultipleStreams {
         env.setParallelism(1);
 
         // 从文件读取数据
-        DataStream<String> inputStream = env.readTextFile("D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt");
+        DataStream<String> inputStream = env.readTextFile("/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt");
 
         // 转换成SensorReading
         DataStream<SensorReading> dataStream = inputStream.map(line -> {
@@ -80,7 +80,7 @@ public class TransformTest4_MultipleStreams {
             }
         });
 
-        resultStream.print();
+        resultStream.print("resultStream");
 
         // 3. union联合多条流
 //        warningStream.union(lowTempStream);

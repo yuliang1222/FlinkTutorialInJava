@@ -27,7 +27,7 @@ public class TransformTest1_Base {
         env.setParallelism(1);
 
         // 从文件读取数据
-        DataStream<String> inputStream = env.readTextFile("D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt");
+        DataStream<String> inputStream = env.readTextFile("/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt");
 
         // 1. map，把String转换成长度输出
         DataStream<Integer> mapStream = inputStream.map(new MapFunction<String, Integer>() {
@@ -42,8 +42,9 @@ public class TransformTest1_Base {
             @Override
             public void flatMap(String value, Collector<String> out) throws Exception {
                 String[] fields = value.split(",");
-                for( String field: fields )
+                for( String field: fields ) {
                     out.collect(field);
+                }
             }
         });
 

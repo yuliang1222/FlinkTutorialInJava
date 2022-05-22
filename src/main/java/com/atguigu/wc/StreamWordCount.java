@@ -43,8 +43,8 @@ public class StreamWordCount {
         // 从socket文本流读取数据
         DataStream<String> inputDataStream = env.socketTextStream(host, port);
 
-
         // 基于数据流进行转换计算
+        // 默认的并行度按照 cpu的核心数量来定
         DataStream<Tuple2<String, Integer>> resultStream = inputDataStream.flatMap(new WordCount.MyFlatMapper()).slotSharingGroup("green")
                 .keyBy(0)
                 .sum(1).setParallelism(2).slotSharingGroup("red");

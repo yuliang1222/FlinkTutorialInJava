@@ -32,7 +32,7 @@ public class UdfTest2_TableFunction {
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
 
         // 1. 读取数据
-        DataStreamSource<String> inputStream = env.readTextFile("D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt");
+        DataStreamSource<String> inputStream = env.readTextFile("/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt");
 
         // 2. 转换成POJO
         DataStream<SensorReading> dataStream = inputStream.map(line -> {

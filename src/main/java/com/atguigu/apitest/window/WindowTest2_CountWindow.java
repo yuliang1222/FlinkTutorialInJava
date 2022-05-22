@@ -28,7 +28,7 @@ public class WindowTest2_CountWindow {
         env.setParallelism(1);
 
 //        // 从文件读取数据
-//        DataStream<String> inputStream = env.readTextFile("D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt");
+//        DataStream<String> inputStream = env.readTextFile("/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt");
 
         // socket文本流
         DataStream<String> inputStream = env.socketTextStream("localhost", 7777);

@@ -63,7 +63,7 @@ public class TableTest2_CommonApi {
 
         // 2. 表的创建：连接外部系统，读取数据
         // 2.1 读取文件
-        String filePath = "D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt";
+        String filePath = "/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt";
         tableEnv.connect( new FileSystem().path(filePath))
                 .withFormat( new Csv())
                 .withSchema( new Schema()

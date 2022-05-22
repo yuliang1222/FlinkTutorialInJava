@@ -33,7 +33,7 @@ public class SinkTest4_Jdbc {
         env.setParallelism(1);
 
         // 从文件读取数据
-//        DataStream<String> inputStream = env.readTextFile("D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt");
+//        DataStream<String> inputStream = env.readTextFile("/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt");
 //
 //        // 转换成SensorReading类型
 //        DataStream<SensorReading> dataStream = inputStream.map(line -> {

@@ -29,7 +29,7 @@ public class SinkTest1_Kafka {
         env.setParallelism(1);
 
 //        // 从文件读取数据
-//        DataStream<String> inputStream = env.readTextFile("D:\\Projects\\BigData\\FlinkTutorial\\src\\main\\resources\\sensor.txt");
+//        DataStream<String> inputStream = env.readTextFile("/Users/yuliang/Downloads/4.代码/FlinkTutorial/src/main/resources/sensor.txt");
 
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "localhost:9092");
@@ -48,6 +48,7 @@ public class SinkTest1_Kafka {
         });
 
         dataStream.addSink( new FlinkKafkaProducer011<String>("localhost:9092", "sinktest", new SimpleStringSchema()));
+
 
         env.execute();
     }
